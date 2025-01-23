@@ -3,6 +3,7 @@ using System;
 using CompanyDetails.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CompanyDetails.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250123075009_M2")]
+    partial class M2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,116 +24,6 @@ namespace CompanyDetails.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("CompanyDetails.Models.CompanyInformation", b =>
-                {
-                    b.Property<int>("CompanyId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CompanyId"));
-
-                    b.Property<string>("AccountsCreatorURL")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("AcquisitionDate")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("AndroidBuild")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ApiBaseUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Canceled")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ContactNumber")
-                        .HasColumnType("text");
-
-                    b.Property<string>("DemoAccountNodeId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("FacebookUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("ForceUpgrade")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("HelpPageUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("IpAddressV4")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("LinkedInUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("LogoUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("MacAddress")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhysicalAddress")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PlatformFeatures")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PrivacyPolicyUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Suspended")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TermsOfServiceUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("WebsiteUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("WhatsNew")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("XUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("YouTubeUrl")
-                        .HasColumnType("text");
-
-                    b.Property<string>("iOSBuild")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("CompanyId");
-
-                    b.ToTable("CompanyInformation");
-                });
 
             modelBuilder.Entity("CompanyDetails.Models.RoleMaster", b =>
                 {
@@ -159,14 +52,14 @@ namespace CompanyDetails.Migrations
                         new
                         {
                             RoleId = 1,
-                            CreatedDate = new DateTime(2025, 1, 23, 8, 4, 8, 361, DateTimeKind.Utc).AddTicks(7150),
+                            CreatedDate = new DateTime(2025, 1, 23, 7, 50, 9, 50, DateTimeKind.Utc).AddTicks(3110),
                             Description = "Administrator with full access",
                             RoleName = "Admin"
                         },
                         new
                         {
                             RoleId = 2,
-                            CreatedDate = new DateTime(2025, 1, 23, 8, 4, 8, 361, DateTimeKind.Utc).AddTicks(7202),
+                            CreatedDate = new DateTime(2025, 1, 23, 7, 50, 9, 50, DateTimeKind.Utc).AddTicks(3157),
                             Description = "Client with limited access",
                             RoleName = "Client"
                         });
@@ -246,12 +139,12 @@ namespace CompanyDetails.Migrations
                         {
                             UserId = 1,
                             CreatedBy = 0,
-                            CreatedDate = new DateTime(2025, 1, 23, 8, 4, 8, 361, DateTimeKind.Utc).AddTicks(7060),
-                            Email = "abcadmin@yopmail.com",
-                            FirstName = "ABC",
+                            CreatedDate = new DateTime(2025, 1, 23, 7, 50, 9, 50, DateTimeKind.Utc).AddTicks(3033),
+                            Email = "v2accountadmin@yopmail.com",
+                            FirstName = "V2Account",
                             IsActive = true,
                             IsDelete = false,
-                            LastName = "Technology",
+                            LastName = "CRM",
                             Otp = 0,
                             OtpDisable = false,
                             Password = "R/fmAZyZOsgvjGYMEwqWHQ==",

@@ -16,6 +16,7 @@ namespace CompanyDetails.Data
         }
         public DbSet<UserMaster> UserMaster { get; set; }
         public DbSet<RoleMaster> RoleMaster { get; set; }
+        public DbSet<CompanyInformation> CompanyInformation { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -24,7 +25,7 @@ namespace CompanyDetails.Data
 
             // Seeding static data
             builder.Entity<UserMaster>().HasData(
-                new UserMaster { UserId = 1, FirstName = "V2Account", LastName = "CRM", Email = "v2accountadmin@yopmail.com", PhoneNo = "1234567890", Password = "R/fmAZyZOsgvjGYMEwqWHQ==", RoleId = RoleType.Admin, IsActive = true, IsDelete = false }
+                new UserMaster { UserId = 1, FirstName = "ABC", LastName = "Technology", Email = "abcadmin@yopmail.com", PhoneNo = "1234567890", Password = "R/fmAZyZOsgvjGYMEwqWHQ==", RoleId = RoleType.Admin, IsActive = true, IsDelete = false }
             );
 
             // Seeding RoleMaster data
