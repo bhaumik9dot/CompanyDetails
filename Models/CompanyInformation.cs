@@ -49,5 +49,8 @@ namespace CompanyDetails.Models
         public string? PrivacyPolicyUrl { get; set; }
         public string? TermsOfServiceUrl { get; set; }
         public string? PhysicalAddress { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+
     }
 }

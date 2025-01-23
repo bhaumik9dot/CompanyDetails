@@ -50,7 +50,8 @@ namespace CompanyDetails.Repositories
                     HelpPageUrl = entity.HelpPageUrl,
                     PrivacyPolicyUrl = entity.PrivacyPolicyUrl,
                     TermsOfServiceUrl = entity.TermsOfServiceUrl,
-                    PhysicalAddress = entity.PhysicalAddress
+                    PhysicalAddress = entity.PhysicalAddress,
+                    CreatedAt = DateTime.UtcNow
                 };
 
                 await _dbContext.AddAsync(companyInformation);
@@ -113,6 +114,7 @@ namespace CompanyDetails.Repositories
                 companyInformation.PrivacyPolicyUrl = entity.PrivacyPolicyUrl;
                 companyInformation.TermsOfServiceUrl = entity.TermsOfServiceUrl;
                 companyInformation.PhysicalAddress = entity.PhysicalAddress;
+                companyInformation.UpdatedAt = DateTime.UtcNow;
 
                 _dbContext.CompanyInformation.Update(companyInformation);
 
