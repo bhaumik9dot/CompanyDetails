@@ -18,7 +18,7 @@ namespace CompanyDetails.Repositories
         }
 
         #region :: AddNewCompany ::
-        public async Task<BaseResponse> AddNewCompany(AddNewCompanyDetalis entity)
+        public async Task<BaseResponse> AddNewCompany(AddUpdateCompanyInformationVM entity)
         {
             try
             {

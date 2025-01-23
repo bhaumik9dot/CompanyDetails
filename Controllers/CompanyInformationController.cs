@@ -20,7 +20,7 @@ namespace CompanyDetails.Controllers
         [HttpPost]
         [Route("add-new-company")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AddNewCompany([FromBody] AddNewCompanyDetalis entity)
+        public async Task<IActionResult> AddNewCompany([FromBody] AddUpdateCompanyInformationVM entity)
         {
             var result = await _companyDetailsRepository.AddNewCompany(entity);
             if (result.Success)

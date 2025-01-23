@@ -6,7 +6,7 @@ namespace CompanyDetails.IRepositories
 {
     public interface ICompanyDetailsRepository
     {
-        Task<BaseResponse> AddNewCompany(AddNewCompanyDetalis entity);
+        Task<BaseResponse> AddNewCompany(AddUpdateCompanyInformationVM entity);
         Task<BaseResponse> UpdateCompanyInformation(AddUpdateCompanyInformationVM entity);
         Task<BaseResponseModel<IEnumerable<AddUpdateCompanyInformationVM>>> GetAllCompanyDetails();
         Task<BaseResponseModel<AddUpdateCompanyInformationVM>> GetCompanyDetailById(int CompanyId);
