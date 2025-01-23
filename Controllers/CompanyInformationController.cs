@@ -33,7 +33,7 @@ namespace CompanyDetails.Controllers
         [HttpPut]
         [Route("update-company-information")]
         [Authorize]
-        public async Task<IActionResult> UpdateCompanyInformation([FromQuery] AddUpdateCompanyInformationVM entity)
+        public async Task<IActionResult> UpdateCompanyInformation([FromBody] AddUpdateCompanyInformationVM entity)
         {
             var result = await _companyDetailsRepository.UpdateCompanyInformation(entity);
             if (result.Success)
