@@ -169,7 +169,9 @@ namespace CompanyDetails.Repositories
                                                     HelpPageUrl = Com.HelpPageUrl,
                                                     PrivacyPolicyUrl = Com.PrivacyPolicyUrl,
                                                     TermsOfServiceUrl = Com.TermsOfServiceUrl,
-                                                    PhysicalAddress = Com.PhysicalAddress
+                                                    PhysicalAddress = Com.PhysicalAddress,
+                                                    CreatedAt  = Com.CreatedAt,
+                                                    UpdatedAt = Com.UpdatedAt
                                                 }).ToListAsync();
 
                 if (companyInformation == null)
@@ -230,7 +232,9 @@ namespace CompanyDetails.Repositories
                     HelpPageUrl = com.HelpPageUrl,
                     PrivacyPolicyUrl = com.PrivacyPolicyUrl,
                     TermsOfServiceUrl = com.TermsOfServiceUrl,
-                    PhysicalAddress = com.PhysicalAddress
+                    PhysicalAddress = com.PhysicalAddress,
+                    CreatedAt = com.CreatedAt,
+                    UpdatedAt = com.UpdatedAt
                 })
                 .AsNoTracking()
                 .FirstOrDefaultAsync();
