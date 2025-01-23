@@ -58,7 +58,7 @@ namespace CompanyDetails.Controllers
 
         [HttpGet]
         [Route("get-company-detail-by-id/{CompanyId}")]
-        [AllowAnonymous]
+        [Authorize]
         public async Task<IActionResult> GetCompanyDetailById(int CompanyId)
         {
             var result = await _companyDetailsRepository.GetCompanyDetailById(CompanyId);
