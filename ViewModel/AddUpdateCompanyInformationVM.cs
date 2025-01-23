@@ -4,6 +4,7 @@ namespace CompanyDetails.ViewModel
 {
     public class AddUpdateCompanyInformationVM
     {
+        [Required]
         public int CompanyId { get; set; }
         [Required]
         public string? CompanyName { get; set; }
