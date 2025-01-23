@@ -37,6 +37,11 @@ namespace CompanyDetails.Helpers
         public static string WithOutOTPLogin = "The OTP-less login mechanism is enabled, bypassing the need for an OTP during login.";
         public static string LoginByAdmin = "Login successfully.";
 
+        // Company Information
+        public static string AddCompany = "Company information has been successfully added.";
+        public static string UpdateCompany = "Company information has been successfully updated.";
+        public static string CompanyNotFound =  "We're sorry, but the company you are looking for could not be found in our system.";
+        public static string CompanyDeletedSuccessfully = "Company information has been successfully deleted.";
     }
 
     

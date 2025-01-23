@@ -36,6 +36,17 @@ builder.Services.Configure<FormOptions>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.AddControllers(options =>
+{
+    // Adds a custom ModelBinderProviders
+    options.ModelBinderProviders.Insert(0, new QueryStringModelBinderProvider());
+}).ConfigureApiBehaviorOptions(options =>
+{
+    // Adds a custom error response factory when ModelState is invalid
+    options.InvalidModelStateResponseFactory = InvalidResponseFactory.ProduceErrorResponse;
+});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -48,6 +59,13 @@ builder.Services.AddCors(options =>
         .AllowCredentials();      // Allow credentials if necessary
     });
 });
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
