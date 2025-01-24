@@ -20,7 +20,7 @@ namespace CompanyDetails.Controllers
         [HttpPost]
         [Route("add-new-company")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AddNewCompany([FromBody] AddUpdateCompanyInformationVM entity)
+        public async Task<IActionResult> AddNewCompany([FromBody] CompanyInformationVM entity)
         {
             var result = await _companyDetailsRepository.AddNewCompany(entity);
             if (result.Success)
@@ -33,7 +33,7 @@ namespace CompanyDetails.Controllers
         [HttpPut]
         [Route("update-company-information")]
         [Authorize]
-        public async Task<IActionResult> UpdateCompanyInformation([FromBody] AddUpdateCompanyInformationVM entity)
+        public async Task<IActionResult> UpdateCompanyInformation([FromBody] CompanyInformationVM entity)
         {
             var result = await _companyDetailsRepository.UpdateCompanyInformation(entity);
             if (result.Success)

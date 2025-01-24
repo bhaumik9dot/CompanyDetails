@@ -6,10 +6,10 @@ namespace CompanyDetails.IRepositories
 {
     public interface ICompanyDetailsRepository
     {
-        Task<BaseResponse> AddNewCompany(AddUpdateCompanyInformationVM entity);
-        Task<BaseResponse> UpdateCompanyInformation(AddUpdateCompanyInformationVM entity);
-        Task<BaseResponseModel<IEnumerable<AddUpdateCompanyInformationVM>>> GetAllCompanyDetails();
-        Task<BaseResponseModel<AddUpdateCompanyInformationVM>> GetCompanyDetailById(int CompanyId);
+        Task<BaseResponse> AddNewCompany(CompanyInformationVM entity);
+        Task<BaseResponse> UpdateCompanyInformation(CompanyInformationVM entity);
+        Task<BaseResponseModel<IEnumerable<CompanyInformationVM>>> GetAllCompanyDetails();
+        Task<BaseResponseModel<CompanyInformationVM>> GetCompanyDetailById(int CompanyId);
         Task<BaseResponse> DeleteCompanyDetailById(int CompanyId);
     }
 }

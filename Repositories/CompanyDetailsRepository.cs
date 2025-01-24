@@ -18,7 +18,7 @@ namespace CompanyDetails.Repositories
         }
 
         #region :: AddNewCompany ::
-        public async Task<BaseResponse> AddNewCompany(AddUpdateCompanyInformationVM entity)
+        public async Task<BaseResponse> AddNewCompany(CompanyInformationVM entity)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace CompanyDetails.Repositories
         #endregion
 
         #region :: UpdateCompanyInformation ::
-        public async Task<BaseResponse> UpdateCompanyInformation(AddUpdateCompanyInformationVM entity)
+        public async Task<BaseResponse> UpdateCompanyInformation(CompanyInformationVM entity)
         {
             try
             {
@@ -135,12 +135,12 @@ namespace CompanyDetails.Repositories
         #endregion
 
         #region :: GetCompanyInformation ::
-        public async Task<BaseResponseModel<IEnumerable<AddUpdateCompanyInformationVM>>> GetAllCompanyDetails()
+        public async Task<BaseResponseModel<IEnumerable<CompanyInformationVM>>> GetAllCompanyDetails()
         {
             try
             {
                 var companyInformation = await (from Com in _dbContext.CompanyInformation
-                                                select new AddUpdateCompanyInformationVM
+                                                select new CompanyInformationVM
                                                 {
                                                     CompanyId = Com.CompanyId,
                                                     CompanyName = Com.CompanyName,
@@ -176,14 +176,14 @@ namespace CompanyDetails.Repositories
 
                 if (companyInformation == null)
                 {
-                    return new BaseResponseModel<IEnumerable<AddUpdateCompanyInformationVM>>
+                    return new BaseResponseModel<IEnumerable<CompanyInformationVM>>
                     {
                         Success = false,
                         Message = ResponseMessage.CompanyNotFound
                     };
                 }
 
-                return new BaseResponseModel<IEnumerable<AddUpdateCompanyInformationVM>>
+                return new BaseResponseModel<IEnumerable<CompanyInformationVM>>
                 {
                     Success = true,
                     Message = ResponseMessage.DataRetrieved,
@@ -199,11 +199,11 @@ namespace CompanyDetails.Repositories
         #endregion
 
         #region :: GetCompanyDetailById ::
-        public async Task<BaseResponseModel<AddUpdateCompanyInformationVM>> GetCompanyDetailById(int companyId)
+        public async Task<BaseResponseModel<CompanyInformationVM>> GetCompanyDetailById(int companyId)
         {
             var companyInformation = await _dbContext.CompanyInformation
                 .Where(x => x.CompanyId == companyId)
-                .Select(com => new AddUpdateCompanyInformationVM
+                .Select(com => new CompanyInformationVM
                 {
                     CompanyId = com.CompanyId,
                     CompanyName = com.CompanyName,
@@ -241,7 +241,7 @@ namespace CompanyDetails.Repositories
 
             if (companyInformation == null)
             {
-                return new BaseResponseModel<AddUpdateCompanyInformationVM>
+                return new BaseResponseModel<CompanyInformationVM>
                 {
                     Success = false,
                     Message = ResponseMessage.CompanyNotFound,
@@ -249,7 +249,7 @@ namespace CompanyDetails.Repositories
                 };
             }
 
-            return new BaseResponseModel<AddUpdateCompanyInformationVM>
+            return new BaseResponseModel<CompanyInformationVM>
             {
                 Success = true,
                 Data = companyInformation,

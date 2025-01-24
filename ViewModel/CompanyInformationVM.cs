@@ -2,7 +2,7 @@
 
 namespace CompanyDetails.ViewModel
 {
-    public class AddUpdateCompanyInformationVM
+    public class CompanyInformationVM
     {
 
         public int CompanyId { get; set; }
